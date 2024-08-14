@@ -18,6 +18,7 @@ os.environ["TORCH_CUDA_ARCH_LIST"] = "7.0 7.5 8.0 8.6 8.9"
 setup(
     name="pointnet2_ops",
     author="Erik Wijmans (Modified by Adam Fishman)",
+    version="3.3.0",
     packages=find_packages(),
     ext_modules=[
         CUDAExtension(
@@ -32,4 +33,7 @@ setup(
     ],
     cmdclass={"build_ext": BuildExtension},
     include_package_data=True,
+    install_requires=[
+        "torch", "numpy"
+    ]
 )
